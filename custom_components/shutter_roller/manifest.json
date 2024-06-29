@@ -1,0 +1,9 @@
+{
+    "domain": "shutter_roller",
+    "name": "HCS Shutter Roller",
+    "version": "1.0.0",
+    "documentation": "https://github.com/thomasmunoz13/hcs_shutter_ha",
+    "dependencies": [],
+    "codeowners": ["@thomasmunoz13"],
+    "requirements": ["requests"]
+  }

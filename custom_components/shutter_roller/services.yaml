@@ -1,0 +1,7 @@
+set_cover_position:
+  name: Set Cover Position
+  description: Set the position of the cover.
+  fields:
+    position:
+      description: The position to set the cover to.
+      example: 50
