@@ -1,0 +1,6 @@
+{
+    "name": "HCS Shutter Roller",
+    "homeassistant": "1.0.0",
+    "zip_release": true,
+    "filename": "hcs_shutter_ha"
+}

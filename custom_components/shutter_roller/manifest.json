@@ -1,9 +1,20 @@
 {
     "domain": "shutter_roller",
     "name": "HCS Shutter Roller",
-    "version": "1.0.0",
-    "documentation": "https://github.com/thomasmunoz13/hcs_shutter_ha",
+    "codeowners": [
+        "@thomasmunoz13"
+    ],
+    "config_flow": true,
     "dependencies": [],
-    "codeowners": ["@thomasmunoz13"],
-    "requirements": ["requests"]
-  }
+    "documentation": "https://github.com/thomasmunoz13/hcs_shutter_ha",
+    "integration_type": "device",
+    "iot_class": "local_polling",
+    "issue_tracker": "https://github.com/thomasmunoz13/hcs_shutter_ha/issues",
+    "loggers": [
+        "custom_components.mbapi2020"
+    ],
+    "requirements": [
+        "protobuf>=3.19.1"
+    ],
+    "version": "1.0.0"
+}
