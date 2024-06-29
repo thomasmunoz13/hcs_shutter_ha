@@ -1,0 +1,7 @@
+DOMAIN = "hcs_shutter_ha"
+CONF_COVERS = "covers"
+CONF_HOST = "host"
+CONF_NAME = "name"
+MANUFACTURER = "HCS"
+MODEL = "Shutter Roller"
+SW_VERSION = "1.0.0"

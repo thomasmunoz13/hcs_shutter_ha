@@ -1,0 +1,41 @@
+{
+    "title": "Shutter Roller",
+    "config": {
+        "step": {
+            "user": {
+                "title": "Configure Shutter Roller",
+                "description": "Set up your Shutter Roller cover.",
+                "data": {
+                    "name": "Name",
+                    "host": "Host",
+                    "shutter_id": "Shutter ID"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Configure Shutter Roller",
+                "description": "Configure the Shutter Roller cover options.",
+                "data": {
+                    "name": "Name",
+                    "host": "Host",
+                    "shutter_id": "Shutter ID"
+                }
+            }
+        }
+    },
+    "services": {
+        "set_cover_position": {
+            "name": "Set Cover Position",
+            "description": "Set the position of the cover.",
+            "fields": {
+                "position": {
+                    "name": "Position",
+                    "description": "The position to set the cover to."
+                }
+            }
+        }
+    }
+}

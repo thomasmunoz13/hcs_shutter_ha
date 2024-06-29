@@ -1,0 +1,20 @@
+{
+    "domain": "hcs_shutter_ha",
+    "name": "HCS Shutter Roller",
+    "codeowners": [
+        "@thomasmunoz13"
+    ],
+    "config_flow": true,
+    "dependencies": [],
+    "documentation": "https://github.com/thomasmunoz13/hcs_shutter_ha",
+    "integration_type": "hub",
+    "iot_class": "local_polling",
+    "issue_tracker": "https://github.com/thomasmunoz13/hcs_shutter_ha/issues",
+    "loggers": [
+        "custom_components.mbapi2020"
+    ],
+    "requirements": [
+        "requests"
+    ],
+    "version": "1.0.0"
+}

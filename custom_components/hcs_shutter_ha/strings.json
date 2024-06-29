@@ -7,7 +7,8 @@
                 "description": "Set up your Shutter Roller cover.",
                 "data": {
                     "name": "Name",
-                    "host": "Host"
+                    "host": "Host",
+                    "shutter_id": "Shutter ID"
                 }
             }
         }
@@ -19,7 +20,8 @@
                 "description": "Configure the Shutter Roller cover options.",
                 "data": {
                     "name": "Name",
-                    "host": "Host"
+                    "host": "Host",
+                    "shutter_id": "Shutter ID"
                 }
             }
         }
