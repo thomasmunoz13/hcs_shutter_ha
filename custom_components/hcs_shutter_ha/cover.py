@@ -5,7 +5,7 @@ from homeassistant.const import CONF_NAME, CONF_HOST
 
 _LOGGER = logging.getLogger(__name__)
 
-DOMAIN = "shutter_roller"
+DOMAIN = "hcs_shutter_ha"
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     covers = config.get(DOMAIN, [])

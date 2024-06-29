@@ -1,5 +1,5 @@
 {
-    "domain": "shutter_roller",
+    "domain": "hcs_shutter_ha",
     "name": "HCS Shutter Roller",
     "codeowners": [
         "@thomasmunoz13"

@@ -3,7 +3,7 @@ from homeassistant.core import HomeAssistant
 
 _LOGGER = logging.getLogger(__name__)
 
-DOMAIN = "shutter_roller"
+DOMAIN = "hcs_shutter_ha"
 
 async def async_setup(hass: HomeAssistant, config: dict):
     _LOGGER.info("Setting up shutter roller integration")

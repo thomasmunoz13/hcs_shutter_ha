@@ -12,7 +12,7 @@ To install this integration, follow these steps:
 4. Add the following configuration to your `configuration.yaml` file:
 
 ```yaml
-shutter_roller:
+hcs_shutter_ha:
     covers:
       - name: Foo
         host: 192.168.1.100
