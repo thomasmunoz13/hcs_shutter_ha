@@ -12,6 +12,9 @@ class ShutterRollerConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     async def async_step_user(self, user_input=None):
         if user_input is not None:
+            unique_id = f"{user_input[CONF_HOST]}_{user_input['shutter_id']}"
+            await self.async_set_unique_id(unique_id)
+            self._abort_if_unique_id_configured()
             return self.async_create_entry(title=user_input['name'], data=user_input)
 
         data_schema = vol.Schema({

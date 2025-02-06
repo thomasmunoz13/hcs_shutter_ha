@@ -20,11 +20,30 @@ jobs:
         run: |
           name=$(find custom_components/ -type d -maxdepth 1 | tail -n 1 | cut -d "/" -f2)
           echo "name=$name" >> $GITHUB_OUTPUT
+      - name: Extract version from manifest
+        if: ${{ github.event_name == 'push' }}
+        id: version
+        run: |
+          version=$(jq -r '.version' custom_components/${{ steps.information.outputs.name }}/manifest.json)
+          echo "version=$version" >> $GITHUB_OUTPUT
+      - name: Create GitHub Release
+        if: ${{ github.event_name == 'push' }}
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: Release v${{ steps.version.outputs.version }}
+          draft: false
+          prerelease: false
       - name: Adjust version number
-        if: ${{ github.event_name == 'release' }}
+        if: ${{ github.event_name == 'release' || github.event_name == 'push' }}
         shell: bash
         run: |
-          yq -i -o json '.version="${{ github.event.release.tag_name }}"' \
+          if [ "${{ github.event_name }}" = "release" ]; then
+            tag="${{ github.event.release.tag_name }}"
+          else
+            tag="v${{ steps.version.outputs.version }}"
+          fi
+          yq -i -o json '.version="'"$tag"'"' \
             "${{ github.workspace }}/custom_components/${{ steps.information.outputs.name }}/manifest.json"
       - name: Create zip file for the integration
         shell: bash
@@ -32,7 +51,7 @@ jobs:
           cd "${{ github.workspace }}/custom_components/${{ steps.information.outputs.name }}"
           zip ${{ steps.information.outputs.name }}.zip -r ./
       - name: 📤 Upload zip to action
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4
         if: ${{ github.event_name == 'push' }}
         with:
           name: hcs_shutter_ha
