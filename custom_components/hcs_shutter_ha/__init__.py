@@ -32,13 +32,13 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     
     hass.data.setdefault(DOMAIN, {}).setdefault(name, {"host": host})
     
-    await hass.config_entries.async_forward_entry_setup(entry, "cover")
+    await hass.config_entries.async_forward_entry_setups(entry, ["cover"])
     
     return True
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry):
     """Unload a config entry."""
-    await hass.config_entries.async_forward_entry_unload(entry, "cover")
+    await hass.config_entries.async_forward_entry_unloads(entry, ["cover"])
     
     hass.data[DOMAIN].pop(entry.data[CONF_NAME])
     
